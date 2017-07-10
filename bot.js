@@ -61,9 +61,5 @@ const client = new komada.Client({
   selfbot      : true,
   cmdLogging   : true,
 });
-client.on("ready", () =>{
-  logger.info(`BOT READY : Logged in as ${client.user.username}#${client.user.discriminator} (${client.user.id})`)
-})
-
 client.login(config.token);
 
