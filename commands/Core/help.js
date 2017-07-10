@@ -1,11 +1,7 @@
 const config = require("../../config.js").selfbot[0];
 const embedColor = parseInt("0x" + Math.floor(Math.random() * 16777215).toString(16));
 exports.run = async (client, msg, [action]) => {
-  if(msg.channel.type === "text"){
-  let bmp = msg.channel.permissionsFor(client.user.id)
-  if (!bmp.has("SEND_MESSAGES")) return msg.send(`I don't have permissons to send a message in <#${msg.channel.id}>`);
-  if (!bmp.has("EMBED_LINKS")) return msg.send(`I don't have permissions to send a embed in <#${msg.channel.id}>`);
-  }
+  
   const method = msg.channel.type === 'dm' ? 'author' : 'channel';
   const cmd = client.commands.get(action) || client.commands.get(client.aliases.get(action));
   const prefix = config.prefix;

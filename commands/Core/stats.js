@@ -4,11 +4,7 @@ require("moment-duration-format");
 const { version: komadaVersion } = require("komada");
 
 exports.run = async (client, msg) => {
-  if(msg.channel.type === "text"){
-    let bmp = msg.channel.permissionsFor(client.user.id)
-    if (!bmp.has("SEND_MESSAGES")) return msg.send(`I don't have permissons to send a message in <#${msg.channel.id}>`);
-    if (!bmp.has("EMBED_LINKS")) return msg.send(`I don't have permissions to send a embed in <#${msg.channel.id}>`);
-  }
+  client.funcs.perms(msg,client)
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
   const embed = new client.methods.Embed()
   embed.setTitle("Statistics");
