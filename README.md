@@ -5,4 +5,4 @@ Selfbot Base v1.0.0
 [Komada](https://komada.js.org) <br>
 [NodeJS](https://nodejs.org)
 
-# [Documentation]()
+# [Documentation](https://loganrose.gitbooks.io/selfbot-base/content/)
