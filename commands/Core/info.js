@@ -1,8 +1,9 @@
 exports.run = async (client, msg) => {
-  let bmp = msg.channel.permissionsFor(client.user.id);
+  if(msg.channel.type === "text"){
+    let bmp = msg.channel.permissionsFor(client.user.id)
     if (!bmp.has("SEND_MESSAGES")) return msg.send(`I don't have permissons to send a message in <#${msg.channel.id}>`);
     if (!bmp.has("EMBED_LINKS")) return msg.send(`I don't have permissions to send a embed in <#${msg.channel.id}>`);
-
+  }
   const embed = new client.methods.Embed()
   .setTitle("Information")
   .setColor(embedColor)
