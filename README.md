@@ -99,4 +99,17 @@ So if you want to create an Embed you would do:
 const embed = new client.methods.Embed()
 ```
 
+### Events
+If you have ever built a Discord bot you know there are events. An event is when something happens
+(like when a message is sent). You can add a file to the events folder. the name of the file has to
+be the name of the event. So if you wanted to know when a member joined a server you would create a 
+file named guildMemberAdd.js.
+
+There is a certain format you have to use too.
+
+```js
+exports.run = (client, Optional-Arguments) => {
+  // event contents
+};
+```
 
