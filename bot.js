@@ -15,8 +15,8 @@ require('moment-duration-format');
 
 /* Global var */
 const config = require('./config.js').selfbot[0];
-embedColor = config.embedColor;
-const version = config.version;
+embedColor = parseInt("0x" + Math.floor(Math.random() * 16777215).toString(16));
+version = config.version;
 
 const komada = require('komada');
 
