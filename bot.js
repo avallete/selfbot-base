@@ -2,11 +2,7 @@ const chalk = require('chalk');
 const winston = require('winston');
 const path = require('path');
 const util = require('util');
-
 const stripAnsi = require('strip-ansi');
-
-bot = {};
-bot.configCache = new Map();
 
 /* Global var */
 const moment = require('moment');
@@ -15,7 +11,7 @@ require('moment-duration-format');
 
 /* Global var */
 const config = require('./config.js').selfbot[0];
-embedColor = config.embedColor;
+embedColor = parseInt("0x" + Math.floor(Math.random() * 16777215).toString(16))
 const version = config.version;
 
 const komada = require('komada');
