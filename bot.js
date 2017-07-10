@@ -52,9 +52,6 @@ logger = new (
   ],
 });
 
-/*
- ** starting the komada client with respective options
- */
 const client = new komada.Client({
   ownerID      : config.ownerID,
   prefix       : config.prefix,
