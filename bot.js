@@ -45,7 +45,7 @@ logger = new (
         const obj = Object.keys(meta).length
           ? `\n\t${meta.stack ? meta.stack : util.inspect(meta, false, depth || null, colorize)}`
           : '';
-        return `${timestamp} ${level.toUpperCase()} ${stripAnsi(message)} ${obj}`;
+        return `${timestamp} [${level.toUpperCase()}] ${stripAnsi(message)} ${obj}`;
       },
       filename   : path.join(process.cwd(),`logs/Bot-0.log`),
     }),
