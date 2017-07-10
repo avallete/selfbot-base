@@ -1,0 +1,48 @@
+const { inspect } = require("util");
+
+/* eslint-disable no-eval */
+exports.run = async (client, msg, [code]) => {
+  try {
+    let bmp = msg.channel.permissionsFor(client.user.id);
+    if (!bmp.has("SEND_MESSAGES")) return msg.send(`I don't have permissons to send a message in <#${msg.channel.id}>`);
+    if (!bmp.has("EMBED_LINKS")) return msg.send(`I don't have permissions to send a embed in <#${msg.channel.id}>`);
+    const embed = new client.methods.Embed();
+    let evaled = eval(code);
+    if (evaled instanceof Promise) evaled = await evaled;
+    if (typeof evaled !== "string") evaled = inspect(evaled, { depth: 0 });
+    try{
+    embed.addField('Input :inbox_tray:', `\`\`\`js\n ${code} \`\`\``);
+    embed.setColor(65280);
+    embed.addField('Output :outbox_tray:', `\`\`\`js\n ${evaled} \`\`\``);
+    embed.setFooter(`${new Date()}`);
+    msg.channel.sendEmbed(embed);
+    } catch(err){
+      msg.channel.send('**There was an error with your eval. Most likely your code was to long.**');
+    }
+  } catch (err) {
+    const embed = new client.methods.Embed();
+    embed.addField('Input :inbox_tray:', `\`\`\`js\n ${code} \`\`\``);
+    embed.addField('Error :inbox_tray:', `\`\`\`\n ${err} \`\`\``);
+    embed.setColor(16711680);
+    embed.setFooter(`${new Date()}`);
+    msg.channel.sendEmbed(embed);
+    //if (err.stack) logger.error("error", err.stack);
+  }
+};
+
+exports.conf = {
+  enabled: true,
+  runIn: ["text", "dm", "group"],
+  aliases: ["ev"],
+  permLevel: 10,
+  botPerms: [],
+  requiredFuncs: [],
+  requiredSettings: [],
+};
+
+exports.help = {
+  name: "eval",
+  description: "Evaluates arbitrary Javascript.",
+  usage: "<code:str>",
+  usageDelim: "",
+};

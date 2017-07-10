@@ -1,0 +1,37 @@
+2017-07-10 01:18:15 am INFO BOT READY : Logged in as Loganrose#2582 (145749360515219456) 
+2017-07-10 01:18:17 am INFO help() [8.38ms] Loganrose[145749360515219456] Direct Messages 
+2017-07-10 01:18:20 am INFO help(all) [289.47ms] Loganrose[145749360515219456] Direct Messages 
+2017-07-10 01:39:23 am INFO eval(client.user.setUsername("Logan")) [122.20ms] Loganrose[145749360515219456] Direct Messages 
+2017-07-10 02:05:58 am INFO eval(msg.guild.leave) [36.16ms] Loganrose[145749360515219456] Omegle[329483090709970944] 
+2017-07-10 02:13:38 am INFO BOT READY : Logged in as Loganrose#2582 (145749360515219456) 
+2017-07-10 02:13:42 am INFO help() [9.03ms] Loganrose[145749360515219456] Omegle[329483090709970944] 
+2017-07-10 02:13:42 am ERROR  
+	DiscordAPIError: Missing Permissions
+    at item.request.gen.end (/home/ubuntu/workspace/node_modules/komada/node_modules/discord.js/src/client/rest/RequestHandlers/Sequential.js:68:65)
+    at then (/home/ubuntu/workspace/node_modules/komada/node_modules/snekfetch/src/index.js:241:21)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:169:7)
+2017-07-10 02:14:55 am INFO BOT READY : Logged in as Loganrose#2582 (145749360515219456) 
+2017-07-10 02:14:58 am INFO ping() [261.05ms] Loganrose[145749360515219456] Direct Messages 
+2017-07-10 02:15:00 am INFO help() [5.63ms] Loganrose[145749360515219456] Direct Messages 
+2017-07-10 02:15:25 am INFO echo(lollol lolasfdds) [5.04ms] Loganrose[145749360515219456] Direct Messages 
+2017-07-10 02:24:37 am INFO BOT READY : Logged in as Loganrose#2582 (145749360515219456) 
+2017-07-10 02:24:45 am INFO help() [7.92ms] Loganrose[145749360515219456] Omegle[329483090709970944] 
+2017-07-10 02:24:45 am ERROR  
+	DiscordAPIError: Missing Permissions
+    at item.request.gen.end (/home/ubuntu/workspace/node_modules/komada/node_modules/discord.js/src/client/rest/RequestHandlers/Sequential.js:68:65)
+    at then (/home/ubuntu/workspace/node_modules/komada/node_modules/snekfetch/src/index.js:241:21)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:169:7)
+2017-07-10 02:25:42 am INFO BOT READY : Logged in as Loganrose#2582 (145749360515219456) 
+2017-07-10 02:25:44 am INFO help() [9.72ms] Loganrose[145749360515219456] Omegle[329483090709970944] 
+2017-07-10 02:25:44 am ERROR  
+	DiscordAPIError: Missing Permissions
+    at item.request.gen.end (/home/ubuntu/workspace/node_modules/komada/node_modules/discord.js/src/client/rest/RequestHandlers/Sequential.js:68:65)
+    at then (/home/ubuntu/workspace/node_modules/komada/node_modules/snekfetch/src/index.js:241:21)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:169:7)
+2017-07-10 02:25:56 am INFO BOT READY : Logged in as Loganrose#2582 (145749360515219456) 
+2017-07-10 02:27:09 am INFO BOT READY : Logged in as Loganrose#2582 (145749360515219456) 
+2017-07-10 02:29:01 am INFO BOT READY : Logged in as Loganrose#2582 (145749360515219456) 
+2017-07-10 02:29:06 am INFO help() [135.10ms] Loganrose[145749360515219456] Omegle[329483090709970944] 
