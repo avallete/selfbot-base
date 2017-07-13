@@ -1,7 +1,7 @@
 const config = require("../../config.js").selfbot[0];
 const embedColor = parseInt("0x" + Math.floor(Math.random() * 16777215).toString(16));
 exports.run = async (client, msg, [action]) => {
-  
+  client.funcs.mperms(msg,client)
   const method = msg.channel.type === 'dm' ? 'author' : 'channel';
   const cmd = client.commands.get(action) || client.commands.get(client.aliases.get(action));
   const prefix = config.prefix;
@@ -14,13 +14,15 @@ exports.run = async (client, msg, [action]) => {
         .setDescription(cmd.help.description)
         .addField('Usage', `${cmd.usage.fullUsage(msg)}`, false)
         .addField('Extended Usages', `${cmd.help.extendedHelp || "No extended help available."}`)
-      return msg.channel.sendEmbed(embed).catch(logger.error);
+        embed.setFooter(`Selfbot v${global.version} | ${new Date()}`);
+      return msg.channel.sendEmbed(embed).catch(global.logger.error);
     } else if (action.trim().toLowerCase() === 'all') {
       const help = this.buildHelp(client, msg);
       let titleMessage = '', helpMessage = [];
       const embed = new client.methods.Embed();
       embed.setTitle("Commands")
       embed.setColor(embedColor);
+      embed.setFooter(`Selfbot v${global.version} | ${new Date()}`);
       for (const key in help) {
         titleMessage = (`**${key}**:`);
         for (const key2 in help[key]) helpMessage.push((Object.keys(help[key]).length > 1 ? `__*${key2}*__\n` : ''), `\n${help[key][key2].join('\n')}\n`);
@@ -39,8 +41,9 @@ exports.run = async (client, msg, [action]) => {
       .addField(`${prefix}help all`, `Type ${prefix}help all to get an overview over all commands`, false)
       .addField(`${prefix}help <commandName>`, `Type ${prefix}help <commandName> to get specific help for one command`, false)
       .addField('https://discord.gg/WkXuhbb', 'Visit our support discord server and ask for help');
+      embed.setFooter(`Selfbot v${global.version} | ${new Date()}`);
 
-    msg.channel.sendEmbed(embed).catch(e=>logger.error(e))
+    msg.channel.sendEmbed(embed).catch(e=>global.logger.error(e));
   }
 };
 
