@@ -4,20 +4,17 @@ const path = require('path');
 const util = require('util');
 const stripAnsi = require('strip-ansi');
 
-/* Global var */
+
 const moment = require('moment');
 require('winston-daily-rotate-file');
 require('moment-duration-format');
 
-/* Global var */
 const config = require('./config.js').selfbot[0];
-embedColor = parseInt("0x" + Math.floor(Math.random() * 16777215).toString(16))
-const version = config.version;
+global.embedColor = parseInt("0x" + Math.floor(Math.random() * 16777215).toString(16));
 
 const komada = require('komada');
 
-/* Global var */
-logger = new (
+global.logger = new (
   winston.Logger
 )({
   transports: [
