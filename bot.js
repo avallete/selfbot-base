@@ -10,8 +10,9 @@ require('winston-daily-rotate-file');
 require('moment-duration-format');
 
 const config = require('./config.js').selfbot[0];
+const package = require('./package.json');
 global.embedColor = parseInt("0x" + Math.floor(Math.random() * 16777215).toString(16));
-
+global.version = package.version;
 const komada = require('komada');
 
 global.logger = new (
