@@ -1,5 +1,6 @@
 const urban = require('urban');
 exports.run = async (client, msg, [term]) => {
+    if(!term) return msg.reply("**You cant search for nothing!**");
     const embed = new client.methods.Embed();
     var uterm = urban(term);
     uterm.first(function(json) {
@@ -45,6 +46,6 @@ exports.conf = {
 exports.help = {
   name: "urban",
   description: "Search UrbanDictionary.com for a word",
-  usage: "<term:str>",
+  usage: "[term:str]",
   usageDelim: "",
 };
