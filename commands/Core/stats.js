@@ -7,6 +7,7 @@ exports.run = async (client, msg) => {
   const embed = new client.methods.Embed()
   embed.setTitle("Statistics");
   embed.setColor(global.embedColor)
+  embed.setAuthor('Selfbot Stats', client.user.avatarURL({format: 'png', size: 128}), 'https://www.selfbot.loganrose.xyz');
   .addField("Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,true)
   .addField("Uptime", `${duration}`,true)
   .addField("Users", `${client.users.size}`,true)
