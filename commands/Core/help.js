@@ -1,7 +1,6 @@
 const config = require("../../config.js").selfbot[0];
 const embedColor = parseInt("0x" + Math.floor(Math.random() * 16777215).toString(16));
 exports.run = async (client, msg, [action]) => {
-  client.funcs.mperms(msg,client)
   const method = msg.channel.type === 'dm' ? 'author' : 'channel';
   const cmd = client.commands.get(action) || client.commands.get(client.aliases.get(action));
   const prefix = config.prefix;
@@ -52,7 +51,7 @@ exports.conf = {
   runIn: ['text', 'dm', 'group'],
   aliases: ['h'],
   permLevel: 1,
-  botPerms: [],
+  botPerms: ["EMBED_LINKS"],
   requiredFuncs: [],
 };
 

@@ -3,7 +3,6 @@ const { inspect } = require("util");
 /* eslint-disable no-eval */
 exports.run = async (client, msg, [code]) => {
   try {
-    client.funcs.mperms(msg,client)
     const embed = new client.methods.Embed();
     let evaled = eval(code);
     if (evaled instanceof Promise) evaled = await evaled;
@@ -33,7 +32,7 @@ exports.conf = {
   runIn: ["text", "dm", "group"],
   aliases: ["ev"],
   permLevel: 10,
-  botPerms: [],
+  botPerms: ["EMBED_LINKS"],
   requiredFuncs: [],
   requiredSettings: [],
 };

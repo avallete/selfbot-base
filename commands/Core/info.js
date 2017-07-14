@@ -1,6 +1,5 @@
 exports.run = async (client, msg) => {
   client.funcs.mperms(msg,client)
-  const embed = new client.methods.Embed()
   .setTitle("Information")
   .setColor(global.embedColor)
   .addField("Developer","Loganrose#2582 (<@145749360515219456>)", false)
@@ -15,7 +14,7 @@ exports.conf = {
   runIn: ['text', 'dm', 'group'],
   aliases: ['h'],
   permLevel: 1,
-  botPerms: [],
+  botPerms: ["EMBED_LINKS"],
   requiredFuncs: [],
 };
 
