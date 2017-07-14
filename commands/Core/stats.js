@@ -3,8 +3,6 @@ require("moment-duration-format");
 const { version: komadaVersion } = require("komada");
 
 exports.run = async (client, msg) => {
-  
-  client.funcs.mperms(msg,client)
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
   const embed = new client.methods.Embed()
   embed.setTitle("Statistics");

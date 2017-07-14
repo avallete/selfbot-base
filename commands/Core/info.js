@@ -1,5 +1,4 @@
 exports.run = async (client, msg) => {
-  client.funcs.mperms(msg,client)
   .setTitle("Information")
   .setColor(global.embedColor)
   .addField("Developer","Loganrose#2582 (<@145749360515219456>)", false)
