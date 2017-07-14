@@ -8,7 +8,7 @@ exports.run = async (client, msg, [action]) => {
     if (cmd) {
       // how the help for a specific command
       const embed = new client.methods.Embed()
-      embed.setAuthor('Selfbot Command Usage', client.user.avatarURL({format: 'png', size: 128}), 'https://www.selfbot.loganrose.xyz');
+      embed.setAuthor('Selfbot Command Usage', client.user.avatarURL({format: 'png', size: 128}), 'https://www.selfbot.loganrose.xyz')
         .setTitle(cmd.help.name)
         .setColor(embedColor)
         .setDescription(cmd.help.description)
@@ -20,7 +20,7 @@ exports.run = async (client, msg, [action]) => {
       const help = this.buildHelp(client, msg);
       let titleMessage = '', helpMessage = [];
       const embed = new client.methods.Embed();
-      embed.setAuthor('Selfbot Commands', client.user.avatarURL({format: 'png', size: 128}), 'https://www.selfbot.loganrose.xyz');
+      embed.setAuthor('Selfbot Commands', client.user.avatarURL({format: 'png', size: 128}), 'https://www.selfbot.loganrose.xyz')
       embed.setTitle("Commands")
       embed.setColor(embedColor);
       embed.setFooter(`Selfbot v${global.version} | ${new Date()}`);
@@ -37,7 +37,7 @@ exports.run = async (client, msg, [action]) => {
   } else {
     // show the general help information
     const embed = new client.methods.Embed()
-    embed.setAuthor('Selfbot Help', client.user.avatarURL({format: 'png', size: 128}), 'https://www.selfbot.loganrose.xyz');
+    embed.setAuthor('Selfbot Help', client.user.avatarURL({format: 'png', size: 128}), 'https://www.selfbot.loganrose.xyz')
       .setTitle("How to use the selfbot?")
       .setColor(0x41ebf4)
       .addField(`${prefix}help all`, `Type ${prefix}help all to get an overview over all commands`, false)
