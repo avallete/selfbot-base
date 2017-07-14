@@ -2,6 +2,7 @@ const { inspect } = require("util");
 
 /* eslint-disable no-eval */
 exports.run = async (client, msg, [code]) => {
+  if(!code) return msg.reply("**You can't eval nothing!**")
   try {
     const embed = new client.methods.Embed();
     let evaled = eval(code);
@@ -40,6 +41,6 @@ exports.conf = {
 exports.help = {
   name: "eval",
   description: "Evaluates arbitrary Javascript.",
-  usage: "<code:str>",
+  usage: "[code:str]",
   usageDelim: "",
 };
